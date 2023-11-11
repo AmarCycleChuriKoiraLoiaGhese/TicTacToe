@@ -1,0 +1,88 @@
+﻿<Window x:Class="TicTacToe.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TicTacToe"
+        mc:Ignorable="d"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        Title="Menu" Height="900" Width="1300" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value ="Transparent"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontFamily" Value="Bison"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Foreground" Value="#F3AA4E"/>
+        </Style>
+
+    </Window.Resources>
+    <Grid x:Name="gridBackground" Background="#F3AA4E" Loaded="OnLoad">
+        <Polygon x:Name="LeftPanel" Points="0,0 50,35 50,95 140,95 1300,900 0,900" Fill="#111820"/>
+        <Button x:Name="btnBackToForm1" Margin="50,20,1100,805" Height="Auto" Width="Auto" Click="btnBackToForm1_Click">
+            
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Background" Value="Transparent"/>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="btnIndicator" Content="⬤" Margin="22,482,1059,294" FontSize="70" Foreground="Transparent"/>
+        <Button x:Name="btnIndicator2" Content="⬤" Margin="1071,482,22,294" FontSize="70" Foreground="Transparent"/>
+        <Button x:Name="btnClickMe" Click="btnClickMe_Click" Margin="50,750,1020,50" Width="Auto">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="BorderThickness" Value="10"/>
+                    <Setter Property="BorderBrush" Value="#F3AA4E"/>
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Width" Value="250"/>
+                    <Setter Property="Height" Value="100"/>
+                    <Setter Property="Margin" Value="50,725,1000,25"/>
+                    <Setter Property="Content" Value="Click Me"/>
+                    <Setter Property="FontSize" Value="65"/>
+                    <Setter Property="Foreground" Value="#F3AA4E"/>
+                    <Setter Property="FontFamily" Value="Bison"/>
+                </Style>
+            </Button.Style>
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="15" Color="#FFF3AA4E"/>
+            </Button.Effect>
+        </Button>
+        <Grid Height="700" Width="700" Margin="306,74,294,126">
+            <Polygon x:Name="BlackColumns" Points="200,0 250,0 250,200 450,200 450,0 500,0 500,200 700,200 700,250 500,250 500,450 700,450 700,500 515,500 450,455 450,250 250,250 250,315 200,280 200,250 160,250 85,200 200,200" Fill="#111820">
+                <Polygon.Effect>
+                    <DropShadowEffect Color="#111820" BlurRadius="15"/>
+                </Polygon.Effect>
+            </Polygon>
+            <Polygon x:Name="YellowColumn" Points="0,200 0,250 160,250 85,200" Fill="#F3AA4E" Stroke="#F3AA4E" StrokeThickness="0">
+                <Polygon.Effect>
+                    <DropShadowEffect Color="#F3AA4E" BlurRadius="15"/>
+                </Polygon.Effect>
+            </Polygon>
+            <Polygon x:Name="YellowColumns" Points="200,280 250,315 250,455 450,455 510,500 500,500 500,700 450,700 450,500 250,500 250,700 200,700 200,500 0,500 0,450 200,450" Fill="#F3AA4E" StrokeThickness="0">
+                <Polygon.Effect>
+                    <DropShadowEffect Color="#F3AA4E" BlurRadius="15"/>
+                </Polygon.Effect>
+            </Polygon>
+            <Button x:Name="R0C0" Margin="0,0,500,500" Height="Auto" Width="Auto " Click="ButtonsWork_Click"/>
+            <Button x:Name="R0C1" Margin="250,0,250,500" Height="Auto" Width="Auto " Click="ButtonsWork_Click"/>
+            <Button x:Name="R0C2" Margin="500,0,0,500" Height="Auto" Width="Auto " Click="ButtonsWork_Click"/>
+            <Button x:Name="R1C0" Margin="0,250,500,250" Height="Auto" Width="Auto " Click="ButtonsWork_Click"/>
+            <Button x:Name="R1C1" Margin="250,250,250,250" Height="Auto" Width="Auto " Click="ButtonsWork_Click"/>
+            <Button x:Name="R1C2" Margin="500,250,0,250" Height="Auto" Width="Auto " Click="ButtonsWork_Click"/>
+            <Button x:Name="R2C0" Margin="0,500,500,0" Height="Auto" Width="Auto " Click="ButtonsWork_Click"/>
+            <Button x:Name="R2C1" Margin="250,500,250,0" Height="Auto" Width="Auto " Click="ButtonsWork_Click"/>
+            <Button x:Name="R2C2" Margin="500,500,0,0" Height="Auto" Width="Auto " Click="ButtonsWork_Click"/>
+        </Grid>
+        <TextBlock x:Name="lblName1" Margin="22,290,1044,524" FontSize="65" FontFamily="Bison" Foreground="#F3AA4E"/>
+        <Label x:Name="lblHighestScore1" Margin="22,376,1200,475" Content="Score: "/>
+        <Label x:Name="ScoreContainer1" Height="50"  Margin="100,375,1071,475"/>
+        <TextBlock x:Name="lblName2" Margin="1071,290,29,530" Foreground="#111820" FontSize="65" FontFamily="Bison"/>
+        <Label x:Name="lblHighestScore2" Height="50" Margin="1073,376,147,474" Content="Score: " Foreground="#111820"/>
+        <Label x:Name="ScoreContainer2" Height="50" Margin="1158,375,10,475" Foreground="#111820"/>
+    </Grid>
+</Window>
